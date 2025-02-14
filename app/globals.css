@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/oswald-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Oswald;
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/oswald-medium-webfont.woff2") format("woff2");
+}
+
+/*#region Glyphs */
+@font-face {
+  font-family: "icomoon";
+  src: url("/fonts/icomoon.eot?qveuvp");
+  src: url("/fonts/icomoon.eot?qveuvp#iefix") format("embedded-opentype"),
+    url("/fonts/icomoon.ttf?qveuvp") format("truetype"),
+    url("/fonts/icomoon.woff?qveuvp") format("woff"),
+    url("/fonts/icomoon.svg?qveuvp#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*#endregion*/
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,4 +63,29 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.videos-item .btn-liked {
+  z-index: 1;
+  position: absolute;
+  top: 3rem;
+  left: 0.75rem;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.videos-item .btn-liked:before {
+  content: "\e9d7";
+  color: #ffeb3b;
+  font-family: "icomoon";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.videos-item .btn-liked.active:before {
+  content: "\e9d9";
 }
